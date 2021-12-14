@@ -12,6 +12,8 @@ Here, in this documentation, instructions will be provided for :
 9) Showing all posts
 
 
+### [Deployed url link]( https://reunion-backend.herokuapp.com)
+
 ## For user registration 
 
 const userPassword = req.body.password;\
@@ -73,7 +75,7 @@ Input parameters:
 
 ## API Endpoints
 
-#### POST /api/authenticate
+#### POST https://reunion-backend.herokuapp.com//api/authenticate
 
  Perform user authentication and return a JWT token.
 - INPUT: Email, Password
@@ -81,39 +83,39 @@ Input parameters:
     
    
     
-####  POST /api/follow/{id} 
+####  POST https://reunion-backend.herokuapp.com//api/follow/{id} 
 Authenticated user would follow user with {id}
 
-#### POST /api/unfollow/{id} 
+#### POST https://reunion-backend.herokuapp.com//api/unfollow/{id} 
 Authenticated user would unfollow a user with {id}
 
-####  GET /api/user 
+####  GET https://reunion-backend.herokuapp.com//api/user 
  Authenticate the request and return the respective user profile returning 
 - User Name, number of followers & followings.
 
-####  POST api/posts/ 
+####  POST https://reunion-backend.herokuapp.com/api/posts/ 
 Add a new post created by the authenticated user.
 - Input: Title, Description
 - RETURNING: Post-ID, Title, Description, Created Time(UTC).
 
-####  DELETE api/posts/{id} 
+####  DELETE https://reunion-backend.herokuapp.com/api/posts/{id} 
 Delete post with {id} created by the authenticated user.
 
-####  POST /api/like/{id} 
+####  POST https://reunion-backend.herokuapp.com//api/like/{id} 
 Like the post with {id} by the authenticated user.
 
-####  POST /api/unlike/{id} 
+####  POST https://reunion-backend.herokuapp.com//api/unlike/{id} 
 Unlike the post with {id} by the authenticated user.
 
-####  POST /api/comment/{id} 
+####  POST https://reunion-backend.herokuapp.com//api/comment/{id} 
 Add comment for post with {id} by the authenticated user.
 - Input: Comment
 - Return: Comment-ID
 
-####  GET api/posts/{id} 
+####  GET https://reunion-backend.herokuapp.com/api/posts/{id} 
 Return a single post with {id} populated with its number of likes and comments
 
-####  GET /api/all_posts 
+####  GET https://reunion-backend.herokuapp.com//api/all_posts 
 Return all posts created by authenticated user sorted by post time.
 For each post return the following values
 - id: ID of the post
