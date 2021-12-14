@@ -16,8 +16,8 @@ Here, in this documentation, instructions will be provided for :
 
 ## For user registration 
 
-`const userPassword = req.body.password;\
-const hashedPassword = await bcrypt.hash(userPassword, 10);\
+`const userPassword = req.body.password;`\
+`const hashedPassword = await bcrypt.hash(userPassword, 10);`\
 
 <!--  console.log(req.body);
  console.log( hashedPassword ); -->
