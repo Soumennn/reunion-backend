@@ -12,39 +12,39 @@ Here, in this documentation, instructions will be provided for :
 9) Showing all posts
 
 
-## FOR  USER REGISTRATION ------------------ >>>>>>
+## For user registration 
 
-const userPassword = req.body.password;
-const hashedPassword = await bcrypt.hash(userPassword, 10);
+const userPassword = req.body.password;\
+const hashedPassword = await bcrypt.hash(userPassword, 10);\
 
 <!--  console.log(req.body);
  console.log( hashedPassword ); -->
             
 
-const userdetails = {
-            fname: "Soumen",
-            lname: "Nath",
-            email: req.body.email.toLowerCase(),
-            password: hashedPassword
+const userdetails = {\
+            fname: "Soumen",\
+            lname: "Nath",\
+            email: req.body.email.toLowerCase(),\
+            password: hashedPassword\
         }
 
-const createdUser = new User(userdetails);
+const createdUser = new User(userdetails);\
 
-const tokenData = {
-            user_id: createdUser._id,
-            email: req.body.email.toLowerCase(),
+const tokenData = {\
+            user_id: createdUser._id,\
+            email: req.body.email.toLowerCase(),\
         }
 
-const gen_token =  jwt.sign(tokenData,process.env.TOKEN_SECRET_KEY);
+const gen_token =  jwt.sign(tokenData,process.env.TOKEN_SECRET_KEY);\
 <!-- console.log("jwt token: " + gen_token); -->
 
-createdUser.token = gen_token;
-await createdUser.save();
+createdUser.token = gen_token;\
+await createdUser.save();\
         
 
-res.status(200).send({
-    "Response":"credentials received & user has been created",
-    "Usercreated":createdUser
+res.status(200).send({\
+    "Response":"credentials received & user has been created",\
+    "Usercreated":createdUser\
 });
 
 ## Sample data inorder to test the APIs
@@ -73,47 +73,47 @@ Input parameters:
 
 ## API Endpoints
 
-### POST /api/authenticate
+#### POST /api/authenticate
 
  Perform user authentication and return a JWT token.
-    - INPUT: Email, Password
-    - RETURN: JWT token
+- INPUT: Email, Password
+- RETURN: JWT token
     
    
     
-###  POST /api/follow/{id} 
+####  POST /api/follow/{id} 
 Authenticated user would follow user with {id}
 
-### POST /api/unfollow/{id} 
+#### POST /api/unfollow/{id} 
 Authenticated user would unfollow a user with {id}
 
-###  GET /api/user 
+####  GET /api/user 
  Authenticate the request and return the respective user profile returning 
 - User Name, number of followers & followings.
 
-###  POST api/posts/ 
+####  POST api/posts/ 
 Add a new post created by the authenticated user.
 - Input: Title, Description
 - RETURNING: Post-ID, Title, Description, Created Time(UTC).
 
-###  DELETE api/posts/{id} 
+####  DELETE api/posts/{id} 
 Delete post with {id} created by the authenticated user.
 
-###  POST /api/like/{id} 
+####  POST /api/like/{id} 
 Like the post with {id} by the authenticated user.
 
-###  POST /api/unlike/{id} 
+####  POST /api/unlike/{id} 
 Unlike the post with {id} by the authenticated user.
 
-###  POST /api/comment/{id} 
+####  POST /api/comment/{id} 
 Add comment for post with {id} by the authenticated user.
 - Input: Comment
 - Return: Comment-ID
 
-###  GET api/posts/{id} 
+####  GET api/posts/{id} 
 Return a single post with {id} populated with its number of likes and comments
 
-###  GET /api/all_posts 
+####  GET /api/all_posts 
 Return all posts created by authenticated user sorted by post time.
 For each post return the following values
 - id: ID of the post
@@ -124,3 +124,4 @@ For each post return the following values
 - likes: Number of likes for the particular post
 
 
+--------------------------------------------------------------------
