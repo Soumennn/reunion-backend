@@ -16,14 +16,14 @@ Here, in this documentation, instructions will be provided for :
 
 ## For user registration 
 
-`const userPassword = req.body.password;`\
-`const hashedPassword = await bcrypt.hash(userPassword, 10);`\
+const userPassword = req.body.password;\
+const hashedPassword = await bcrypt.hash(userPassword, 10);\
 
 <!--  console.log(req.body);
  console.log( hashedPassword ); -->
             
 
-const userdetails = {\
+ const userdetails = {\
             fname: "Soumen",\
             lname: "Nath",\
             email: req.body.email.toLowerCase(),\
@@ -46,8 +46,8 @@ await createdUser.save();\
 
 res.status(200).send({\
     "Response":"credentials received & user has been created",\
-    "Usercreated":createdUser\
-`
+    "Usercreated":createdUser\ 
+
 
 ## Sample data inorder to test the APIs
 
