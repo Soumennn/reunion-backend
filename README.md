@@ -16,7 +16,7 @@ Here, in this documentation, instructions will be provided for :
 
 ## For user registration 
 
-const userPassword = req.body.password;\
+`const userPassword = req.body.password;\
 const hashedPassword = await bcrypt.hash(userPassword, 10);\
 
 <!--  console.log(req.body);
@@ -47,11 +47,11 @@ await createdUser.save();\
 res.status(200).send({\
     "Response":"credentials received & user has been created",\
     "Usercreated":createdUser\
-});
+`
 
 ## Sample data inorder to test the APIs
 
-### Dummy user credentials:
+### `Dummy user credentials:`
 **User1**
 Input parameters:
 - email: linkinpark@gmail.com
@@ -67,7 +67,7 @@ Input parameters:
 - email: soumen@gmail.com
 - password: soumen
 
-### Posts with ids
+### `Posts with ids`
 - 61b7b2627c4744ffd6af75fa
 - 61b7b49871e0f1d1b198bf93
 - 61b830bb2012ae8d93e768b5
